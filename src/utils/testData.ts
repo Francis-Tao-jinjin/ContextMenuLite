@@ -122,6 +122,7 @@ export const data2:ContextmenuProps = [
         fn: null,
         extend: [{
             name: 'Mail',
+            selected: true,
             fn: () => {console.log('click Mail')},
             extend: []
         }, {
@@ -134,5 +135,4 @@ export const data2:ContextmenuProps = [
             extend: []
         },]
     }
-
 ];

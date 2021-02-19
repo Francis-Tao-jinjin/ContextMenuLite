@@ -1,6 +1,6 @@
 {
     "name": "context-menu-lite",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A react simple context menu library",
     "main": "build/context-menu.bundle.js",
     "files": [
@@ -11,11 +11,19 @@
         "react",
         "context-menu"
     ],
+    "homepage": "https://github.com/Francis-Tao-jinjin/ContextMenuLite",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Francis-Tao-jinjin/ContextMenuLite"
+    },
+    "bugs": {
+        "url": "https://github.com/Francis-Tao-jinjin/ContextMenuLite/issues"
+    },
     "license": "MIT",
-    "private": "false",
     "scripts": {
         "build": "webpack --config config/webpack.prod.config.js",
-        "start": "NODE_ENV=development node scripts/dev-server.js"
+        "start": "NODE_ENV=development node scripts/dev-server.js",
+        "ts:build": "tsc --project ./tsconfig.build.json"
     },
     "devDependencies": {
         "@types/react": "^17.0.0",
@@ -40,6 +48,10 @@
         "webpack-bundle-analyzer": "^3.5.1",
         "webpack-cli": "^4.0.0",
         "webpack-dev-server": "^3.11.0"
+    },
+    "peerDependencies": {
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
     },
     "dependencies": {}
 }

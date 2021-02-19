@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { UIContainer } from './components/index';
+import { UIContainer } from './dev/index';
 
 export class DevApp {
     private root:HTMLElement;
