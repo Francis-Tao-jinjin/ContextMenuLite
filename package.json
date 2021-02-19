@@ -1,8 +1,9 @@
 {
     "name": "context-menu-lite",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A react simple context menu library",
     "main": "build/context-menu.bundle.js",
+    "types": "build/type/contextMenu.d.ts",
     "files": [
         "build/constext-menu.bundle.js"
     ],
