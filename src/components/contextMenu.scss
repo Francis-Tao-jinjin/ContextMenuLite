@@ -1,0 +1,227 @@
+$menu-item-width: 250px;
+$extend-init-left: 246px;
+$menu-item-color: white;
+$menu-item-hover-gb: #319cb7;
+$dark-menu-item-hover-gb: #2196f3;
+$menu-item-selected-color: #00200b;
+$dark-menu-item-selected-color: #f1f1f1;
+$menu-item-font-size: 14px;
+$menu-item-tips-size: 12px;
+
+.contextmenu-container {
+    position: fixed;
+    display: block;
+}
+
+.contextmenu-wrapper {
+    padding: 3px 0 3px 0;
+    background: rgb(232,232,232);
+    background: linear-gradient(346deg, rgba(232,232,232,1) 0%, rgba(255,255,251,1) 100%);
+    -moz-box-shadow: 2px 2px 5px  rgb(102, 102, 102);
+    -webkit-box-shadow: 2px 2px 5px rgb(102, 102, 102);
+    box-shadow: 2px 2px 5px rgb(102, 102, 102);
+}
+
+.contextmenu-wrapper * {
+	box-sizing: border-box;
+	position: relative;
+}
+
+.contextmenu-wrapper ul,
+.contextmenu-wrapper li {
+	list-style: none;
+	border: 0;
+	outline: 0;
+}
+
+.contextmenu-ulist {
+    padding: 2px 0;
+    margin: 0;
+
+    .contextmenu-item {
+        margin: 0;
+        // padding: 0 2px;
+        position: relative;
+        width: $menu-item-width;
+        font-size: $menu-item-font-size;
+
+        &.contextmenu-item-separate::after {
+            content: ' ';
+            width: 100%;
+            height: 2px;
+            display: block;
+            background-color: #0000001a;
+            margin: 2px 0;
+        }
+
+        .contextmenu-item-extend {
+            position: absolute;
+            left: $extend-init-left;
+            top: -5px;
+            // top: 0px;
+        }
+
+        &:hover > .contextmenu-item-extend {
+            display: initial;
+        }
+
+        .contextmenu-item-extend-icon {
+            width: 0;
+            height: 0;
+            border: 5px dashed transparent;
+            border-left: 5px solid #666666;
+            overflow: hidden;
+            position: absolute;
+            top: 7px;
+            right: 5px;
+        }
+
+        .contextmenu-item-content {
+            width: 100%;
+            display: flex;
+            display: -webkit-flex;
+            display: -moz-flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+            -moz-justify-content: space-between;
+            align-items: center;
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            align-content: center;
+            -webkit-align-content: center;
+            -moz-align-content: center;
+            // padding: 5px 15px 5px 1px;
+            padding: 3px 15px 3px 1px;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            cursor: pointer;
+
+            &:hover{
+                color: $menu-item-color;
+                background-color: $menu-item-hover-gb;
+            }
+
+            &:hover ~ .contextmenu-item-extend-icon {
+                border-left: 5px solid #ffffff;
+            }
+
+            .contextmenu-item-tag {
+                width: 25px;
+                flex: 0 0 25px;
+                text-align: left;
+            }
+
+            .contextmenu-item-tips {
+                width: 70px;
+                flex: 0 0 70px;
+                text-align: right;
+            }
+
+            .contextmenu-item-text {
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                text-align: left;
+            }
+
+            &.contextmenu-item-content-disabled{
+                color: #999999 !important;
+                cursor: default !important;
+                background-color: initial;
+            }
+
+            &.contextmenu-item-content-disabled:hover{
+                color: #999999 !important;
+                cursor: default !important;
+                background-color: initial;
+            }
+
+            .contextmenu-item-tag-selected{
+                width: 6px;
+                height: 12px;
+                border-color: $menu-item-selected-color;
+                border-style: solid;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg) translate3d(4px, -4px, 0);
+            }
+        }
+    }
+}
+
+.contextmenu-container.dark {
+    .contextmenu-wrapper {
+        background: rgb(0,0,0);
+        background: linear-gradient(346deg, rgba(0,0,0,1) 0%, rgba(105,105,105,1) 100%);
+        -moz-box-shadow: 2px 2px 5px  rgba(102, 102, 102, 0.4);
+        -webkit-box-shadow: 2px 2px 5px rgba(102, 102, 102, 0.4);
+        box-shadow: 2px 2px 5px rgba(102, 102, 102, 0.4);
+    
+        .contextmenu-item {
+            color: white;
+
+            &.contextmenu-item-separate::after {
+                background-color: #ffffff4d;
+            }
+
+            .contextmenu-item-content:hover {
+                background-color: $dark-menu-item-hover-gb;
+            }
+
+            .contextmenu-item-content.contextmenu-item-content-disabled:hover {
+                background-color: initial;
+            }
+
+            .contextmenu-item-tag-selected{
+                border-color: $dark-menu-item-selected-color;
+            }
+            
+            .contextmenu-item-extend-icon {
+                border-left: 10px solid #ffffff;
+                top: 7px;
+                right: 0px;
+            }
+
+            .contextmenu-item-content {
+
+
+                &:hover ~ .contextmenu-item-extend-icon {
+                    border-left: 10px solid #ffffff;
+                }
+
+                // &.contextmenu-item-content-disabled:hover{
+                //     background-color: initial;
+                // }
+            }
+        }
+    }
+}
+
+.contextmenu-container.roundCorner {
+    .contextmenu-wrapper {
+
+        // border-radius: 10px;
+        border-radius: 7px;
+
+        // .contextmenu-ulist {
+        //     .contextmenu-item {
+        //         &:nth-child(1) {
+        //             border-radius: 8px 8px 0 0;
+
+        //             > .contextmenu-item-content  {
+        //                 border-radius: 8px 8px 0 0;
+        //             }
+        //         }
+
+        //         &:last-child {
+        //             border-radius: 0 0 8px 8px;
+
+        //             > .contextmenu-item-content  {
+        //                 border-radius: 0 0 8px 8px;
+        //             }
+        //         }
+        //     }
+        // }
+    }
+}
