@@ -55,9 +55,11 @@ export function MenuItem(props:{
                         toggleExtend(false);
                     }}
                     onClick={(ev:React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-                        ev.stopPropagation();
-                        if (item.fn) {
-                            item.fn();
+                        if (!item.disabled) {
+                            ev.stopPropagation();
+                            if (item.fn) {
+                                item.fn();
+                            }
                         }
                     }}
                 >
@@ -88,9 +90,11 @@ export function MenuItem(props:{
     } else {
         return <li className={['contextmenu-item', item.separate ? 'contextmenu-item-separate' : ''].join(' ')}
                 onClick={(ev:React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-                    ev.stopPropagation();
-                    if (item.fn) {
-                        item.fn();
+                    if (!item.disabled) {
+                        ev.stopPropagation();
+                        if (item.fn) {
+                            item.fn();
+                        }
                     }
                 }}
                 title={item.name}>

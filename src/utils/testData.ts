@@ -75,6 +75,7 @@ export const data:ContextmenuProps = [
 export const data2:ContextmenuProps = [
     {
         name: 'Open',
+        selected: true,
         fn: () => {console.log('click open')},
         extend: []
     },
@@ -96,13 +97,14 @@ export const data2:ContextmenuProps = [
             fn: () => console.log('click X code'),
             extend: [],
         }, {
-            name: 'vs code (default)',
+            name: 'vs code',
             fn: () => console.log('click vs code'),
             extend: [],
         }]
     },
     {
         name: 'Move to Trash',
+        disabled: true,
         fn: () => {console.log('click Move to Trash')},
         extend: []
     },{

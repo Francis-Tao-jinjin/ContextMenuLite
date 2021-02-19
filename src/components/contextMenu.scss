@@ -100,6 +100,10 @@ $menu-item-tips-size: 12px;
             &:hover{
                 color: $menu-item-color;
                 background-color: $menu-item-hover-gb;
+
+                .contextmenu-item-tag-selected{
+                    border-color: $dark-menu-item-selected-color;
+                }
             }
 
             &:hover ~ .contextmenu-item-extend-icon {
@@ -144,7 +148,7 @@ $menu-item-tips-size: 12px;
                 border-color: $menu-item-selected-color;
                 border-style: solid;
                 border-width: 0 2px 2px 0;
-                transform: rotate(45deg) translate3d(4px, -4px, 0);
+                transform: rotate(45deg) translate3d(4px, -5px, 0);
             }
         }
     }
@@ -184,15 +188,9 @@ $menu-item-tips-size: 12px;
             }
 
             .contextmenu-item-content {
-
-
                 &:hover ~ .contextmenu-item-extend-icon {
                     border-left: 10px solid #ffffff;
                 }
-
-                // &.contextmenu-item-content-disabled:hover{
-                //     background-color: initial;
-                // }
             }
         }
     }

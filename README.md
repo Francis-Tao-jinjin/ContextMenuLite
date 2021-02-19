@@ -27,6 +27,24 @@ Light Round Cornor contextmenu at right side of the screen
 
 ## Basic Usage & Props
 
+**Props**
+
+**data**: An Object in type *ContextmenuProps*
+
+```ts
+type ContextmenuData = {
+    name: string;
+    fn: (() => void) | null; // handle when user click this item
+    tips?: string;
+    separate?: boolean; // this will create a line bellow the meun item
+    selected?: boolean; // draw a ✔ tick mark on the front side of this item
+    disabled?: boolean; // make this item disabled
+    extend: ContextmenuData[];
+};
+
+type ContextmenuProps = ContextmenuData[]
+```
+
 ```tsx
 import React, { useState, useEffect } from 'react';
 import { ContextMenuLite } from 'context-menu-lite';
@@ -97,3 +115,4 @@ function App() {
 
 export default App;
 ```
+
