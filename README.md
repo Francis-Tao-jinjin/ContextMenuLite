@@ -29,7 +29,7 @@ Light Round Cornor contextmenu at right side of the screen
 
 **Props**
 
-**data**: An Object in type *ContextmenuProps*
+**data**: An Object in type `ContextmenuProps`
 
 ```ts
 type ContextmenuData = {
@@ -44,6 +44,11 @@ type ContextmenuData = {
 
 type ContextmenuProps = ContextmenuData[]
 ```
+**position**: `{ x : number, y : number }`, the position related to the viewport that you want the contextmenu show-up. Normally, just use the clientX and clientY of the MouseEvent.
+
+**dark**: optional, toggle dark scheme
+
+**roundCorner**: optional, toggle round corner style
 
 ```tsx
 import React, { useState, useEffect } from 'react';
