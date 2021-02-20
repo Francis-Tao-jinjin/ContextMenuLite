@@ -11,6 +11,7 @@ $menu-item-tips-size: 12px;
 .contextmenu-container {
     position: fixed;
     display: block;
+    z-index: 100;
 }
 
 .contextmenu-wrapper {
