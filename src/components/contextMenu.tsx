@@ -14,7 +14,7 @@ export type ContextmenuData = {
     separate?: boolean,
     selected?: boolean,
     disabled?: boolean,
-    extend: ContextmenuData[],
+    extend?: ContextmenuData[],
 };
 
 export type ContextmenuProps = ContextmenuData[];

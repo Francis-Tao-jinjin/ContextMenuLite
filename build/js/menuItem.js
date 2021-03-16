@@ -45,9 +45,11 @@ function MenuItem(props) {
             }, onMouseLeave: function () {
                 toggleExtend(false);
             }, onClick: function (ev) {
-                ev.stopPropagation();
-                if (item.fn) {
-                    item.fn();
+                if (!item.disabled) {
+                    ev.stopPropagation();
+                    if (item.fn) {
+                        item.fn();
+                    }
                 }
             } },
             react_1.default.createElement("div", { className: ['contextmenu-item-content', item.disabled ? 'contextmenu-item-content-disabled' : ''].join(' ') },
@@ -62,9 +64,11 @@ function MenuItem(props) {
     }
     else {
         return react_1.default.createElement("li", { className: ['contextmenu-item', item.separate ? 'contextmenu-item-separate' : ''].join(' '), onClick: function (ev) {
-                ev.stopPropagation();
-                if (item.fn) {
-                    item.fn();
+                if (!item.disabled) {
+                    ev.stopPropagation();
+                    if (item.fn) {
+                        item.fn();
+                    }
                 }
             }, title: item.name },
             react_1.default.createElement("div", { className: ['contextmenu-item-content', item.disabled ? 'contextmenu-item-content-disabled' : ''].join(' ') },

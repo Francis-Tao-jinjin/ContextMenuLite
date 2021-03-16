@@ -7,7 +7,7 @@ export declare type ContextmenuData = {
     separate?: boolean;
     selected?: boolean;
     disabled?: boolean;
-    extend: ContextmenuData[];
+    extend?: ContextmenuData[];
 };
 export declare type ContextmenuProps = ContextmenuData[];
 export declare function ContextMenuLite(props: {
